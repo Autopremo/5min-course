@@ -24,7 +24,7 @@
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
         }
         .nav-button:not(.active):hover {
-            background-color: #e8eaf6;
+            background-color: #374151; /* Darker hover for dark mode */
         }
         .content-section {
             display: none;
@@ -33,8 +33,8 @@
             display: block;
         }
         .prompt-card {
-            background-color: #1e293b;
-            color: #e2e8f0;
+            background-color: #111827; /* Darker card background */
+            color: #d1d5db;
             border-radius: 0.5rem;
             padding: 1rem;
             position: relative;
@@ -42,12 +42,16 @@
             font-size: 0.875rem;
             min-height: 4rem;
         }
+        .prompt-card pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
         .copy-button {
             position: absolute;
             top: 0.5rem;
             right: 0.5rem;
-            background-color: #334155;
-            color: #94a3b8;
+            background-color: #374151;
+            color: #9ca3af;
             border: none;
             padding: 0.25rem 0.5rem;
             border-radius: 0.25rem;
@@ -56,8 +60,8 @@
             transition: all 0.2s ease;
         }
         .copy-button:hover {
-            background-color: #475569;
-            color: #e2e8f0;
+            background-color: #4b5563;
+            color: #f3f4f6;
         }
         .chart-container { 
             position: relative; 
@@ -76,7 +80,7 @@
         .loader {
             width: 20px;
             height: 20px;
-            border: 3px solid #f3f3f3;
+            border: 3px solid #4b5563; /* Darker loader base */
             border-top: 3px solid #4285F4;
             border-radius: 50%;
             animation: spin 1s linear infinite;
@@ -90,20 +94,20 @@
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body class="bg-gray-900 text-gray-300">
 
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
         <header class="text-center mb-8">
-            <h1 class="text-4xl md:text-5xl font-bold text-slate-900">Supercharge Your Workflow</h1>
-            <p class="mt-2 text-lg text-slate-600">An Interactive Guide to Using Gemini in Google Workspace</p>
+            <h1 class="text-4xl md:text-5xl font-bold text-white">Supercharge Your Workflow</h1>
+            <p class="mt-2 text-lg text-gray-400">An Interactive Guide to Using Gemini in Google Workspace</p>
         </header>
 
         <main>
             <section id="intro" class="mb-12">
-                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
-                    <h2 class="text-2xl font-bold mb-4 text-slate-900">Your New AI-Powered Partner</h2>
-                    <p class="mb-4 text-slate-600">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-700">
+                    <h2 class="text-2xl font-bold mb-4 text-white">Your New AI-Powered Partner</h2>
+                    <p class="mb-4 text-gray-400">
                         This guide breaks down the 5-minute mini-course on leveraging Gemini, your intelligent, collaborative partner built right into the Google tools you use every day. Gemini is more than a feature; it's a coach, research analyst, and productivity booster designed to help you work smarter, not harder. The key to success is writing clear, specific prompts. Use this guide to explore features, get sample prompts, and transform the way you work.
                     </p>
                     <div class="chart-container">
@@ -113,48 +117,48 @@
             </section>
 
             <nav class="flex flex-wrap justify-center gap-2 md:gap-4 mb-12" id="navigation">
-                <button data-target="gmail" class="nav-button active font-semibold py-2 px-4 rounded-full">✉️ Gmail</button>
-                <button data-target="docs" class="nav-button font-semibold py-2 px-4 rounded-full">📄 Docs</button>
-                <button data-target="sheets" class="nav-button font-semibold py-2 px-4 rounded-full">📊 Sheets</button>
-                <button data-target="slides" class="nav-button font-semibold py-2 px-4 rounded-full">🖼️ Slides</button>
-                <button data-target="cheatsheet" class="nav-button font-semibold py-2 px-4 rounded-full">📋 Prompt Cheat Sheet</button>
+                <button data-target="gmail" class="nav-button active font-semibold py-2 px-4 rounded-full text-gray-200">✉️ Gmail</button>
+                <button data-target="docs" class="nav-button font-semibold py-2 px-4 rounded-full text-gray-200">📄 Docs</button>
+                <button data-target="sheets" class="nav-button font-semibold py-2 px-4 rounded-full text-gray-200">📊 Sheets</button>
+                <button data-target="slides" class="nav-button font-semibold py-2 px-4 rounded-full text-gray-200">🖼️ Slides</button>
+                <button data-target="cheatsheet" class="nav-button font-semibold py-2 px-4 rounded-full text-gray-200">📋 Prompt Cheat Sheet</button>
             </nav>
 
             <div id="content-container">
                 <section id="gmail" class="content-section active">
                     <div class="text-center mb-8">
-                        <h2 class="text-3xl font-bold text-slate-900">Mastering Communication in Gmail</h2>
-                        <p class="mt-2 text-md text-slate-600 max-w-3xl mx-auto">Gemini in Gmail transforms how you handle your inbox. It shifts your effort from the low-value task of reading every word to the high-value task of understanding the situation and acting strategically. Go from overloaded to on-top-of-it in seconds.</p>
+                        <h2 class="text-3xl font-bold text-white">Mastering Communication in Gmail</h2>
+                        <p class="mt-2 text-md text-gray-400 max-w-3xl mx-auto">Gemini in Gmail transforms how you handle your inbox. It shifts your effort from the low-value task of reading every word to the high-value task of understanding the situation and acting strategically. Go from overloaded to on-top-of-it in seconds.</p>
                     </div>
                     <div class="grid md:grid-cols-2 gap-8">
-                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
-                            <h3 class="text-xl font-bold mb-3 text-slate-800">1. Instant Summaries: Tame the Inbox</h3>
-                            <p class="mb-4 text-slate-600">Instead of reading endless email chains, use Gemini to get the key takeaways and action items instantly. It's perfect for catching up quickly on long conversations.</p>
-                            <p class="font-semibold text-slate-700 mb-2">How it works:</p>
-                            <ul class="list-disc list-inside space-y-1 text-slate-600 mb-4">
+                        <div class="bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-700">
+                            <h3 class="text-xl font-bold mb-3 text-white">1. Instant Summaries: Tame the Inbox</h3>
+                            <p class="mb-4 text-gray-400">Instead of reading endless email chains, use Gemini to get the key takeaways and action items instantly. It's perfect for catching up quickly on long conversations.</p>
+                            <p class="font-semibold text-gray-200 mb-2">How it works:</p>
+                            <ul class="list-disc list-inside space-y-1 text-gray-400 mb-4">
                                 <li>Open a long email thread.</li>
                                 <li>Click the "Summarize this email" button at the top.</li>
                                 <li>Read the bulleted summary in the "Ask Gemini" side panel.</li>
                                 <li>Ask follow-up questions for more detail.</li>
                             </ul>
-                            <p class="font-semibold text-slate-700 mb-2">Example Prompt:</p>
+                            <p class="font-semibold text-gray-200 mb-2">Example Prompt:</p>
                             <div class="prompt-card">
                                 <button class="copy-button" onclick="copyPrompt(this)">Copy</button>
                                 <pre>Summarize this email and list any action items for me.</pre>
                             </div>
                         </div>
-                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
-                            <h3 class="text-xl font-bold mb-3 text-slate-800">2. Effortless Composition: From Prompt to Perfect Email</h3>
-                            <p class="mb-4 text-slate-600">Beat writer's block by telling Gemini what you want to say. It drafts well-structured, professional emails that you can refine and send in moments.</p>
-                            <p class="font-semibold text-slate-700 mb-2">How it works:</p>
-                            <ul class="list-disc list-inside space-y-1 text-slate-600 mb-4">
+                        <div class="bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-700">
+                            <h3 class="text-xl font-bold mb-3 text-white">2. Effortless Composition: From Prompt to Perfect Email</h3>
+                            <p class="mb-4 text-gray-400">Beat writer's block by telling Gemini what you want to say. It drafts well-structured, professional emails that you can refine and send in moments.</p>
+                            <p class="font-semibold text-gray-200 mb-2">How it works:</p>
+                            <ul class="list-disc list-inside space-y-1 text-gray-400 mb-4">
                                 <li>Click "Reply" in an email.</li>
                                 <li>Click the "Help me write" (pencil icon) button.</li>
                                 <li>Type your instruction in the prompt box.</li>
                                 <li>Use the "Refine" options (e.g., Formalize, Shorten).</li>
                                 <li>Click "Insert" to add the text to your email.</li>
                             </ul>
-                            <p class="font-semibold text-slate-700 mb-2">Example Prompt:</p>
+                            <p class="font-semibold text-gray-200 mb-2">Example Prompt:</p>
                             <div class="prompt-card">
                                 <button class="copy-button" onclick="copyPrompt(this)">Copy</button>
                                 <pre>Draft a professional email to the team confirming I will handle the action items from the summary and will provide an update by Friday.</pre>
@@ -165,34 +169,34 @@
 
                 <section id="docs" class="content-section">
                      <div class="text-center mb-8">
-                        <h2 class="text-3xl font-bold text-slate-900">Transforming Content Creation in Docs</h2>
-                        <p class="mt-2 text-md text-slate-600 max-w-3xl mx-auto">Gemini in Docs acts as your creative partner through the entire writing lifecycle. It helps with ideation, drafting, refinement, and even research, all within a single, focused environment so you never lose your flow.</p>
+                        <h2 class="text-3xl font-bold text-white">Transforming Content Creation in Docs</h2>
+                        <p class="mt-2 text-md text-gray-400 max-w-3xl mx-auto">Gemini in Docs acts as your creative partner through the entire writing lifecycle. It helps with ideation, drafting, refinement, and even research, all within a single, focused environment so you never lose your flow.</p>
                     </div>
                     <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
-                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
-                            <h3 class="text-xl font-bold mb-3 text-slate-800">1. From Idea to First Draft</h3>
-                            <p class="mb-4 text-slate-600">Never face a blank page again. Give Gemini a topic, and it will generate a structured outline or a full first draft to get you started.</p>
-                             <p class="font-semibold text-slate-700 mb-2">Example Prompt:</p>
+                        <div class="bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-700">
+                            <h3 class="text-xl font-bold mb-3 text-white">1. From Idea to First Draft</h3>
+                            <p class="mb-4 text-gray-400">Never face a blank page again. Give Gemini a topic, and it will generate a structured outline or a full first draft to get you started.</p>
+                             <p class="font-semibold text-gray-200 mb-2">Example Prompt:</p>
                             <div class="prompt-card">
                                 <button class="copy-button" onclick="copyPrompt(this)">Copy</button>
                                 <pre>Create a blog post outline about the benefits of a four-day work week, including sections on productivity, employee well-being, and potential challenges.</pre>
                             </div>
                         </div>
-                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
-                            <h3 class="text-xl font-bold mb-3 text-slate-800">2. The Art of Refinement</h3>
-                            <p class="mb-4 text-slate-600">Act as your personal editor. Highlight any text to change its tone, shorten its length, or rephrase it for clarity with a single click.</p>
-                            <p class="font-semibold text-slate-700 mb-2">How it works:</p>
-                            <ul class="list-disc list-inside space-y-1 text-slate-600 mb-4">
+                        <div class="bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-700">
+                            <h3 class="text-xl font-bold mb-3 text-white">2. The Art of Refinement</h3>
+                            <p class="mb-4 text-gray-400">Act as your personal editor. Highlight any text to change its tone, shorten its length, or rephrase it for clarity with a single click.</p>
+                            <p class="font-semibold text-gray-200 mb-2">How it works:</p>
+                            <ul class="list-disc list-inside space-y-1 text-gray-400 mb-4">
                                 <li>Highlight a paragraph or sentence.</li>
                                 <li>Click the "Help me write" icon that appears.</li>
                                 <li>Choose an option like "Tone" or "Shorten".</li>
                                 <li>Click "Replace" to accept the change.</li>
                             </ul>
                         </div>
-                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
-                            <h3 class="text-xl font-bold mb-3 text-slate-800">3. Cross-App Research Assistant</h3>
-                            <p class="mb-4 text-slate-600">Pull information from other Google Workspace files without ever leaving your document. Use the "@" symbol to reference other files.</p>
-                            <p class="font-semibold text-slate-700 mb-2">Example Prompt (in side panel):</p>
+                        <div class="bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-700">
+                            <h3 class="text-xl font-bold mb-3 text-white">3. Cross-App Research Assistant</h3>
+                            <p class="mb-4 text-gray-400">Pull information from other Google Workspace files without ever leaving your document. Use the "@" symbol to reference other files.</p>
+                            <p class="font-semibold text-gray-200 mb-2">Example Prompt (in side panel):</p>
                             <div class="prompt-card">
                                 <button class="copy-button" onclick="copyPrompt(this)">Copy</button>
                                 <pre>Summarize the key findings from @Q3_Project_Report and list the top 3 recommendations.</pre>
@@ -203,23 +207,23 @@
                 
                 <section id="sheets" class="content-section">
                     <div class="text-center mb-8">
-                        <h2 class="text-3xl font-bold text-slate-900">Unlocking Insights in Google Sheets</h2>
-                        <p class="mt-2 text-md text-slate-600 max-w-3xl mx-auto">Gemini in Sheets democratizes data analysis. It lowers the barrier to entry, allowing anyone to organize data, generate formulas, and create visualizations using simple, natural language. This fosters a culture of data-driven decision-making.</p>
+                        <h2 class="text-3xl font-bold text-white">Unlocking Insights in Google Sheets</h2>
+                        <p class="mt-2 text-md text-gray-400 max-w-3xl mx-auto">Gemini in Sheets democratizes data analysis. It lowers the barrier to entry, allowing anyone to organize data, generate formulas, and create visualizations using simple, natural language. This fosters a culture of data-driven decision-making.</p>
                     </div>
                      <div class="grid md:grid-cols-2 gap-8">
-                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
-                            <h3 class="text-xl font-bold mb-3 text-slate-800">1. Effortless Organization</h3>
-                            <p class="mb-4 text-slate-600">Forget building tables manually. Just describe the tracker, log, or planner you need, and Gemini will create a perfectly formatted table for you.</p>
-                            <p class="font-semibold text-slate-700 mb-2">Example Prompt (in side panel):</p>
+                        <div class="bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-700">
+                            <h3 class="text-xl font-bold mb-3 text-white">1. Effortless Organization</h3>
+                            <p class="mb-4 text-gray-400">Forget building tables manually. Just describe the tracker, log, or planner you need, and Gemini will create a perfectly formatted table for you.</p>
+                            <p class="font-semibold text-gray-200 mb-2">Example Prompt (in side panel):</p>
                             <div class="prompt-card">
                                 <button class="copy-button" onclick="copyPrompt(this)">Copy</button>
                                 <pre>Create a project tracker for a new website launch with columns for task, owner, due date, and status.</pre>
                             </div>
                         </div>
-                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
-                            <h3 class="text-xl font-bold mb-3 text-slate-800">2. Demystify Formulas & Analysis</h3>
-                            <p class="mb-4 text-slate-600">Stop struggling to remember complex formulas. Ask for a calculation or analysis in plain English, and Gemini will provide the formula or create a chart for you.</p>
-                             <p class="font-semibold text-slate-700 mb-2">Example Prompts (in side panel):</p>
+                        <div class="bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-700">
+                            <h3 class="text-xl font-bold mb-3 text-white">2. Demystify Formulas & Analysis</h3>
+                            <p class="mb-4 text-gray-400">Stop struggling to remember complex formulas. Ask for a calculation or analysis in plain English, and Gemini will provide the formula or create a chart for you.</p>
+                             <p class="font-semibold text-gray-200 mb-2">Example Prompts (in side panel):</p>
                             <div class="prompt-card mb-4">
                                 <button class="copy-button" onclick="copyPrompt(this)">Copy</button>
                                 <pre>In the 'Progress' column, create a formula to calculate the percentage of tasks completed for each row.</pre>
@@ -234,35 +238,35 @@
 
                 <section id="slides" class="content-section">
                     <div class="text-center mb-8">
-                        <h2 class="text-3xl font-bold text-slate-900">Designing Dynamic Presentations in Slides</h2>
-                        <p class="mt-2 text-md text-slate-600 max-w-3xl mx-auto">Gemini in Slides accelerates the design process by acting as both a creative asset and a content synthesizer. Create original images on the fly and transform documents into compelling presentations, turning hours of work into minutes.</p>
+                        <h2 class="text-3xl font-bold text-white">Designing Dynamic Presentations in Slides</h2>
+                        <p class="mt-2 text-md text-gray-400 max-w-3xl mx-auto">Gemini in Slides accelerates the design process by acting as both a creative asset and a content synthesizer. Create original images on the fly and transform documents into compelling presentations, turning hours of work into minutes.</p>
                     </div>
                      <div class="grid md:grid-cols-2 gap-8">
-                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
-                            <h3 class="text-xl font-bold mb-3 text-slate-800">1. Instant, Original Imagery</h3>
-                            <p class="mb-4 text-slate-600">Stop searching for stock photos. Describe the exact image you need, and Gemini will generate unique, high-quality options that perfectly match your message.</p>
-                             <p class="font-semibold text-slate-700 mb-2">How it works:</p>
-                            <ul class="list-disc list-inside space-y-1 text-slate-600 mb-4">
+                        <div class="bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-700">
+                            <h3 class="text-xl font-bold mb-3 text-white">1. Instant, Original Imagery</h3>
+                            <p class="mb-4 text-gray-400">Stop searching for stock photos. Describe the exact image you need, and Gemini will generate unique, high-quality options that perfectly match your message.</p>
+                             <p class="font-semibold text-gray-200 mb-2">How it works:</p>
+                            <ul class="list-disc list-inside space-y-1 text-gray-400 mb-4">
                                 <li>Go to "Insert" > "Image" > "Generate an image".</li>
                                 <li>Describe the image and add a style.</li>
                                 <li>Click on an option to insert it.</li>
                             </ul>
-                            <p class="font-semibold text-slate-700 mb-2">Example Prompt:</p>
+                            <p class="font-semibold text-gray-200 mb-2">Example Prompt:</p>
                             <div class="prompt-card">
                                 <button class="copy-button" onclick="copyPrompt(this)">Copy</button>
                                 <pre>A photorealistic image of a diverse team collaborating around a modern, sunlit conference table.</pre>
                             </div>
                         </div>
-                        <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
-                            <h3 class="text-xl font-bold mb-3 text-slate-800">2. From Document to Deck, Instantly</h3>
-                            <p class="mb-4 text-slate-600">This is the ultimate workflow. Reference a Google Doc, and Gemini will read it, extract key information, design a slide, and even add a relevant image automatically.</p>
-                            <p class="font-semibold text-slate-700 mb-2">How it works:</p>
-                            <ul class="list-disc list-inside space-y-1 text-slate-600 mb-4">
+                        <div class="bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-700">
+                            <h3 class="text-xl font-bold mb-3 text-white">2. From Document to Deck, Instantly</h3>
+                            <p class="mb-4 text-gray-400">This is the ultimate workflow. Reference a Google Doc, and Gemini will read it, extract key information, design a slide, and even add a relevant image automatically.</p>
+                            <p class="font-semibold text-gray-200 mb-2">How it works:</p>
+                            <ul class="list-disc list-inside space-y-1 text-gray-400 mb-4">
                                 <li>Open the "Ask Gemini" side panel.</li>
                                 <li>Use the "@" symbol to reference a Doc.</li>
                                 <li>Ask Gemini to summarize it onto a slide.</li>
                             </ul>
-                            <p class="font-semibold text-slate-700 mb-2">Example Prompt (in side panel):</p>
+                            <p class="font-semibold text-gray-200 mb-2">Example Prompt (in side panel):</p>
                             <div class="prompt-card">
                                 <button class="copy-button" onclick="copyPrompt(this)">Copy</button>
                                 <pre>Create a slide summarizing the main points from @Blog_Post_Draft about the four-day work week.</pre>
@@ -273,64 +277,64 @@
                 
                 <section id="cheatsheet" class="content-section">
                     <div class="text-center mb-8">
-                        <h2 class="text-3xl font-bold text-slate-900">Producer's Prompt Cheat Sheet</h2>
-                        <p class="mt-2 text-md text-slate-600 max-w-3xl mx-auto">Use this curated list as a starting point, then generate your own custom prompts in the Playground below.</p>
+                        <h2 class="text-3xl font-bold text-white">Producer's Prompt Cheat Sheet</h2>
+                        <p class="mt-2 text-md text-gray-400 max-w-3xl mx-auto">Use this curated list as a starting point, then generate your own custom prompts in the Playground below.</p>
                     </div>
-                    <div class="bg-white p-4 sm:p-6 rounded-lg shadow-sm border border-slate-200 overflow-x-auto mb-12">
+                    <div class="bg-gray-800 p-4 sm:p-6 rounded-lg shadow-sm border border-gray-700 overflow-x-auto mb-12">
                         <table class="w-full text-left">
-                             <thead class="bg-slate-100">
+                             <thead class="bg-gray-700">
                                 <tr>
-                                    <th class="p-4 font-semibold text-slate-800">Application</th>
-                                    <th class="p-4 font-semibold text-slate-800">Demonstrable Prompt</th>
-                                    <th class="p-4 font-semibold text-slate-800">Key Talking Point</th>
+                                    <th class="p-4 font-semibold text-white">Application</th>
+                                    <th class="p-4 font-semibold text-white">Demonstrable Prompt</th>
+                                    <th class="p-4 font-semibold text-white">Key Talking Point</th>
                                 </tr>
                             </thead>
-                            <tbody class="divide-y divide-slate-200">
+                            <tbody class="divide-y divide-gray-600">
                                 <tr>
-                                    <td class="p-4 align-top font-semibold text-slate-700">Gmail</td>
-                                    <td class="p-4 align-top font-mono text-sm text-sky-800">Summarize this email thread and create a bulleted list of all action items and deadlines.</td>
-                                    <td class="p-4 align-top text-slate-600">Instantly understand long conversations and pull out what you need to do next.</td>
+                                    <td class="p-4 align-top font-semibold text-gray-200">Gmail</td>
+                                    <td class="p-4 align-top font-mono text-sm text-sky-400">Summarize this email thread and create a bulleted list of all action items and deadlines.</td>
+                                    <td class="p-4 align-top text-gray-400">Instantly understand long conversations and pull out what you need to do next.</td>
                                 </tr>
                                  <tr>
-                                    <td class="p-4 align-top font-semibold text-slate-700">Gmail</td>
-                                    <td class="p-4 align-top font-mono text-sm text-sky-800">Draft a friendly but professional email to the team confirming I will handle the action items from the summary and will provide an update by EOD Friday.</td>
-                                    <td class="p-4 align-top text-slate-600">Go from a simple instruction to a perfectly drafted email in seconds.</td>
+                                    <td class="p-4 align-top font-semibold text-gray-200">Gmail</td>
+                                    <td class="p-4 align-top font-mono text-sm text-sky-400">Draft a friendly but professional email to the team confirming I will handle the action items from the summary and will provide an update by EOD Friday.</td>
+                                    <td class="p-4 align-top text-gray-400">Go from a simple instruction to a perfectly drafted email in seconds.</td>
                                 </tr>
                                 <tr>
-                                    <td class="p-4 align-top font-semibold text-slate-700">Docs</td>
-                                    <td class="p-4 align-top font-mono text-sm text-sky-800">Pull the key statistics from the Q3 sales data in @Q3_Sales_Report_Sheet and write a paragraph analyzing the main trends.</td>
-                                    <td class="p-4 align-top text-slate-600">Act as a research assistant, pulling data from spreadsheets directly into your document without leaving the app.</td>
+                                    <td class="p-4 align-top font-semibold text-gray-200">Docs</td>
+                                    <td class="p-4 align-top font-mono text-sm text-sky-400">Pull the key statistics from the Q3 sales data in @Q3_Sales_Report_Sheet and write a paragraph analyzing the main trends.</td>
+                                    <td class="p-4 align-top text-gray-400">Act as a research assistant, pulling data from spreadsheets directly into your document without leaving the app.</td>
                                 </tr>
                                 <tr>
-                                    <td class="p-4 align-top font-semibold text-slate-700">Sheets</td>
-                                    <td class="p-4 align-top font-mono text-sm text-sky-800">Identify the top 5 performing posts based on the 'likes' column and create a pie chart to visualize the platform distribution.</td>
-                                    <td class="p-4 align-top text-slate-600">Analyze your data and create visualizations using plain English, no complex formulas required.</td>
+                                    <td class="p-4 align-top font-semibold text-gray-200">Sheets</td>
+                                    <td class="p-4 align-top font-mono text-sm text-sky-400">Identify the top 5 performing posts based on the 'likes' column and create a pie chart to visualize the platform distribution.</td>
+                                    <td class="p-4 align-top text-gray-400">Analyze your data and create visualizations using plain English, no complex formulas required.</td>
                                 </tr>
                                 <tr>
-                                    <td class="p-4 align-top font-semibold text-slate-700">Slides</td>
-                                    <td class="p-4 align-top font-mono text-sm text-sky-800">Generate a vibrant, watercolor-style image of a lightbulb filled with growing plants, symbolizing innovation and growth.</td>
-                                    <td class="p-4 align-top text-slate-600">Create unique, original images that perfectly match your message, no stock photos needed.</td>
+                                    <td class="p-4 align-top font-semibold text-gray-200">Slides</td>
+                                    <td class="p-4 align-top font-mono text-sm text-sky-400">Generate a vibrant, watercolor-style image of a lightbulb filled with growing plants, symbolizing innovation and growth.</td>
+                                    <td class="p-4 align-top text-gray-400">Create unique, original images that perfectly match your message, no stock photos needed.</td>
                                 </tr>
                                 <tr>
-                                    <td class="p-4 align-top font-semibold text-slate-700">Slides</td>
-                                    <td class="p-4 align-top font-mono text-sm text-sky-800">Create a presentation slide based on the 'key messaging' section of my @Marketing_Campaign_Plan doc.</td>
-                                    <td class="p-4 align-top text-slate-600">Transform your notes and documents into presentation-ready slides automatically.</td>
+                                    <td class="p-4 align-top font-semibold text-gray-200">Slides</td>
+                                    <td class="p-4 align-top font-mono text-sm text-sky-400">Create a presentation slide based on the 'key messaging' section of my @Marketing_Campaign_Plan doc.</td>
+                                    <td class="p-4 align-top text-gray-400">Transform your notes and documents into presentation-ready slides automatically.</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     
                     <!-- Gemini API Prompt Playground -->
-                    <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
-                        <h3 class="text-2xl font-bold mb-4 text-slate-900">✨ AI Prompt Playground</h3>
-                        <p class="mb-6 text-slate-600">Can't find the right prompt? Describe your task below, and let Gemini craft the perfect prompt for you.</p>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-700">
+                        <h3 class="text-2xl font-bold mb-4 text-white">✨ AI Prompt Playground</h3>
+                        <p class="mb-6 text-gray-400">Can't find the right prompt? Describe your task below, and let Gemini craft the perfect prompt for you.</p>
                         
                         <div class="grid md:grid-cols-2 gap-6 items-start">
                             <!-- Input Form -->
                             <div class="space-y-4">
                                 <div>
-                                    <label for="app-select" class="block text-sm font-medium text-slate-700 mb-1">1. Choose an application</label>
-                                    <select id="app-select" class="w-full p-2 border border-slate-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                    <label for="app-select" class="block text-sm font-medium text-gray-300 mb-1">1. Choose an application</label>
+                                    <select id="app-select" class="w-full p-2 border border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white">
                                         <option>Gmail</option>
                                         <option>Docs</option>
                                         <option>Sheets</option>
@@ -338,8 +342,8 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <label for="task-description" class="block text-sm font-medium text-slate-700 mb-1">2. Describe your task</label>
-                                    <textarea id="task-description" rows="4" class="w-full p-2 border border-slate-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., Write a follow-up email after a sales call"></textarea>
+                                    <label for="task-description" class="block text-sm font-medium text-gray-300 mb-1">2. Describe your task</label>
+                                    <textarea id="task-description" rows="4" class="w-full p-2 border border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 bg-gray-700 text-white" placeholder="e.g., Write a follow-up email after a sales call"></textarea>
                                 </div>
                                 <button id="generate-prompt-btn" class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 flex items-center justify-center">
                                     Generate Prompt
@@ -348,11 +352,11 @@
                             
                             <!-- Output Area -->
                             <div>
-                                 <label class="block text-sm font-medium text-slate-700 mb-1">3. Your generated prompt</label>
-                                <div id="generated-prompt-container" class="prompt-card bg-slate-800 flex items-center justify-center">
-                                    <span id="prompt-placeholder" class="text-slate-400">Your custom prompt will appear here...</span>
-                                    <pre id="prompt-output" class="whitespace-pre-wrap w-full"></pre>
-                                    <div id="prompt-loader" class="hidden items-center text-slate-400">
+                                 <label class="block text-sm font-medium text-gray-300 mb-1">3. Your generated prompt</label>
+                                <div id="generated-prompt-container" class="prompt-card bg-gray-900 flex items-center justify-center">
+                                    <span id="prompt-placeholder" class="text-gray-500">Your custom prompt will appear here...</span>
+                                    <pre id="prompt-output" class="w-full"></pre>
+                                    <div id="prompt-loader" class="hidden items-center text-gray-400">
                                         <div class="loader"></div>
                                         <span>Generating...</span>
                                     </div>
@@ -365,7 +369,7 @@
             </div>
         </main>
         
-        <footer class="text-center mt-12 text-slate-500 text-sm">
+        <footer class="text-center mt-12 text-gray-500 text-sm">
             <p>This interactive guide is based on the Gemini for Google Workspace mini-course plan.</p>
         </footer>
     </div>
@@ -410,13 +414,22 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     plugins: {
-                        legend: { position: 'bottom', },
+                        legend: { position: 'bottom', labels: { color: '#d1d5db' } },
                         tooltip: { callbacks: { label: (context) => `${context.dataset.label}: ${context.raw} seconds` } },
-                        title: { display: true, text: 'Approximate Time Allocation per Section' }
+                        title: { display: true, text: 'Approximate Time Allocation per Section', color: '#d1d5db' }
                     },
                     scales: {
-                        x: { stacked: true, title: { display: true, text: 'Time in Seconds' } },
-                        y: { stacked: true, grid: { display: false } }
+                        x: { 
+                            stacked: true, 
+                            title: { display: true, text: 'Time in Seconds', color: '#9ca3af' },
+                            ticks: { color: '#9ca3af' },
+                            grid: { color: '#4b5563' }
+                        },
+                        y: { 
+                            stacked: true, 
+                            grid: { display: false },
+                            ticks: { color: '#9ca3af' }
+                        }
                     },
                 }
             });
@@ -439,7 +452,6 @@
                     return;
                 }
                 
-                // Show loader and hide other elements
                 promptLoader.classList.remove('hidden');
                 promptLoader.classList.add('flex');
                 promptPlaceholder.classList.add('hidden');
@@ -447,13 +459,12 @@
                 copyGeneratedBtn.classList.add('hidden');
                 generateBtn.disabled = true;
 
-                // Construct the prompt for the Gemini API
                 const metaPrompt = `You are an expert in writing effective prompts for Google Gemini integrated within Google Workspace. A user wants to perform a task in the application "${selectedApp}". The user's goal is: "${userTask}". Based on this goal, generate a single, clear, concise, and highly effective prompt for them to use directly in the "${selectedApp}" Gemini interface. The prompt should be self-contained and ready to use. Do not add any conversational text or explanations, just the prompt itself.`;
                 
                 try {
                     let chatHistory = [{ role: "user", parts: [{ text: metaPrompt }] }];
                     const payload = { contents: chatHistory };
-                    const apiKey = ""; // API key is handled by the environment
+                    const apiKey = "";
                     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
                     
                     const response = await fetch(apiUrl, {
@@ -484,7 +495,6 @@
                     promptOutput.textContent = "Sorry, something went wrong. Please try again.";
                     promptOutput.classList.remove('hidden');
                 } finally {
-                    // Hide loader and re-enable button
                     promptLoader.classList.add('hidden');
                     promptLoader.classList.remove('flex');
                     generateBtn.disabled = false;
